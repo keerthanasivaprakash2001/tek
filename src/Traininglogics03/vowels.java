@@ -2,8 +2,6 @@ package Traininglogics03;
 import java.util.regex.*;
 public class vowels {
 
-
-
         public static void main(String[] args) {
             String str = "hello how are you";
             Pattern p = Pattern.compile("[aeiouAEIOU]");
