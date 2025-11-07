@@ -1,10 +1,7 @@
 package Traininglogics01;
 import java.util.*;
 public class FrqArr {
-
-
-
-        public static void main(String[] args) {
+    public static void main(String[] args) {
             int[] arr = {1, 2, 2, 3, 1, 4, 2, 3};
 
 

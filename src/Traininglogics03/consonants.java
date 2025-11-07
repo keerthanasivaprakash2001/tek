@@ -2,7 +2,7 @@ package Traininglogics03;
 
 import java.util.regex.*;
 
-public class consonants {
+public class  consonants {
 
     public static void main(String[] args) {
         String str="hey what are you doing";
