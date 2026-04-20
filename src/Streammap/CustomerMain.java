@@ -3,6 +3,7 @@ package Streammap;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CustomerMain {
         public static void main(String[] args) {
@@ -95,6 +96,27 @@ public class CustomerMain {
                         System.out.println(country + " → Average Age: " + avgAge);
                     });
 
+
+
+//            implements a program that takes a map of customer object as input and performs following operation .
+
+//            sort the remaining customer in descending order of their loyalty scores,and the by their ages in sending order .
+//            return  a new map containing the customer ids as key and their names as value , but with each name reversed , in lowercase and suffixed with their country code
+            LinkedHashMap<String, String> result = customerMap.values().stream()
+                    .filter(c -> !(c.getYearsOfMembership() < 2
+                            && c.getBalance() < 1000
+                            && c.getNumberOfTransactions() > 10))
+                    .sorted(Comparator.comparing(Customer::getLoyaltyScore).reversed()
+                            .thenComparing(Customer::getAge))
+                    .collect(Collectors.toMap(
+                            Customer::getId,
+                            c -> new StringBuilder(c.getName()).reverse().toString().toLowerCase()
+                                    + "_" + c.getCountry(),
+                            (e1, e2) -> e1,
+                            LinkedHashMap::new
+                    ));
+
+            result.forEach((Cusid, Cusname) -> System.out.println(Cusid + " : " + Cusname));
 
         }
     }

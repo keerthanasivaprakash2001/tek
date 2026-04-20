@@ -42,6 +42,15 @@ public class Main {
 //            Sort the remaining employees in ascending order of their salaries, and then by their years of experience in descending order.
 //                    Return a new list containing the IDs of the remaining employees, but with each ID multiplied by 10.
 //
+
+
+
+
+            employees.stream().filter(emp -> !(emp.getYearsOfExperience()<5) && (emp.getPerformanceRating()<8)
+            && (emp.getSalary()>60000 && emp.getSalary()<120000))
+                    .sorted(Comparator.comparing(Employee::getSalary).thenComparing(Employee::getYearsOfExperience).reversed())
+                            .toList();
+
 //
             System.out.print("**********************Task2********************");
             employees.stream().filter(employee -> !(employee.getYearsOfExperience()<5 && employee.getPerformanceRating()<8

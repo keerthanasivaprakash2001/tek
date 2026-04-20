@@ -13,7 +13,6 @@ public class DupliWord {
         for(int i=0;i<s.length;i++){
             String s1=s[i];
             map.put(s1,map.getOrDefault(s1,0)+1);
-
         }
         for(Map.Entry<String,Integer> entry:map.entrySet()){
             if(entry.getValue()>1){

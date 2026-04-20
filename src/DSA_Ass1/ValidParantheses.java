@@ -1,8 +1,5 @@
 package DSA_Ass1;
-
-
-
-    import java.util.*;
+import java.util.*;
 
     public class ValidParantheses {
 
